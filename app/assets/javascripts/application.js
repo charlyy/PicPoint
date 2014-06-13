@@ -13,3 +13,18 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
+
+
+
+$(document).ready(function(){
+	navigator.geolocation.getCurrentPosition(function(position) { 
+      userLat = position.coords.latitude;
+      userLng = position.coords.longitude; 
+	});
+});
+
+
+
+
+
+
