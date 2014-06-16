@@ -1,4 +1,4 @@
-json.array!(@tags) do |tag|
-  json.extract! tag, :id, :name
-  json.url tag_url(tag, format: :json)
+json.array!(@photos) do |photo|
+  json.extract! photo, :id, :name
+  json.url photo_url(photo, format: :json)
 end

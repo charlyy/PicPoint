@@ -2,7 +2,7 @@
   <table class="table">
     <thead>
       <tr>
-        <th>Name</th>
+        <th></th>
         <th></th>
         <th></th>
         <th></th>
@@ -10,10 +10,11 @@
     </thead>
 
 <tbody>
- 	  <% @photos.each do |photo| %>
-        <tr>
-          <td><%= photo.name %></td>
-        </tr>
-      <% end %>
+<div class='col-sm-12'>
+    <% @photos.each do |photo|%>
+      <div class='thumbs col-sm-3'><%= image_tag photo.images.standard_resolution.url %>
+        <div class='caption'> <%= distance_of_time_in_words(Time.now, Time.at(photo.created_time.to_i),include_seconds: true) %></div>
+      </div>
+    <% end %>
 </tbody>
 </div>
